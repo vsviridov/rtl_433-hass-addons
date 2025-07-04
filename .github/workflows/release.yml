@@ -2,16 +2,16 @@
 # `--version` to builder so each addon gets it's own version.
 name: Create new rtl_433 addon release
 
-on:
-  push:
-    branches:
-      - next
-    tags:
-      - '2*'
-  schedule:
-    # A random daily time, as Actions doesn't have a suggestion for running
-    # daily without causing job spikes.
-    - cron:  '16 8 * * *'
+on: workflow_dispatch
+  # push:
+  #   branches:
+  #     - next
+  #   tags:
+  #     - '2*'
+  # schedule:
+  #   # A random daily time, as Actions doesn't have a suggestion for running
+  #   # daily without causing job spikes.
+  #   - cron:  '16 8 * * *'
 
 env:
   REGISTRY: ghcr.io
