@@ -27,9 +27,7 @@ WORKDIR ./rtl_433
 # Build a specific commit or tag.
 ARG rtl433GitRevision=feat-gardensoil
 RUN git checkout ${rtl433GitRevision}
-RUN git config pull.ff only
-RUN git config pull.rebase true
-RUN git pull
+RUN git pull --rebase
 WORKDIR ./build
 RUN cmake ..
 RUN make -j 4
