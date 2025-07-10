@@ -28,6 +28,7 @@ WORKDIR ./rtl_433
 ARG rtl433GitRevision=feat-gardensoil
 RUN git checkout ${rtl433GitRevision}
 RUN git config pull.ff only
+RUN git config pull.rebase true
 RUN git pull
 WORKDIR ./build
 RUN cmake ..
